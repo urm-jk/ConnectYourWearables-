@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 class WearablesWidgets extends StatelessWidget {
-  const WearablesWidgets({
+  WearablesWidgets({
     super.key,
-    required this.wearableText,
-    required this.image,
+    required this.data,
   });
 
-  final String wearableText;
-  final String image;
+  final WearablesWidgetsData data;
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +23,13 @@ class WearablesWidgets extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Image.asset(image),
+              child: Image.asset(data.image),
             ),
             const SizedBox(
               width: 10,
             ),
             Text(
-              wearableText,
+              data.wearableText,
               style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             ),
             const Spacer(),
@@ -57,4 +55,14 @@ class WearablesWidgets extends StatelessWidget {
       ),
     );
   }
+}
+
+class WearablesWidgetsData {
+  const WearablesWidgetsData({
+    required this.wearableText,
+    required this.image,
+  });
+
+  final String wearableText;
+  final String image;
 }
